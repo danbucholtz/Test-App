@@ -1,0 +1,52 @@
+<ion-item-sliding class="post-cmp">
+  <ion-item no-padding>
+    <ion-avatar item-left>
+      <img [src]="postData.better_featured_image.media_details.sizes.thumbnail.source_url" *ngIf="postData.better_featured_image.media_details.sizes.thumbnail">
+
+    </ion-avatar>
+    <h2 class="post-title" [innerHTML]="postData.title.rendered"></h2>
+    <p>Posted {{postData.date | amTimeAgo}}</p>
+
+    <ion-row no-padding>
+      <ion-col no-padding>
+        <button clear small color="danger" (click)="readBtn()">
+          <ion-icon name='book'></ion-icon>
+          Read
+        </button>
+      </ion-col>
+      <ion-col no-padding text-center>
+        <button clear small color="danger" (click)="favoriteBtn()">
+          <ion-icon name='bookmark'></ion-icon>
+          Star
+        </button>
+      </ion-col>
+
+      <ion-col no-padding text-right>
+        <button clear small color="danger" (click)="shareBtn()">
+          <ion-icon name='share-alt'></ion-icon>
+          Share
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <ion-item-options side="left">
+    <button color="danger" (click)="favoriteBtn()"> 
+        <ion-icon name="bookmark"></ion-icon>
+        Star
+      </button>
+    <button color="secondary" (click)="shareBtn()"> 
+        <ion-icon name="share-alt"></ion-icon>
+        Share
+      </button>
+  </ion-item-options>
+  <ion-item-options side="right">
+    <button color="danger" (click)="favoriteBtn()"> 
+        <ion-icon name="bookmark"></ion-icon>
+        Star
+      </button>
+    <button color="secondary" (click)="shareBtn()"> 
+        <ion-icon name="share-alt"></ion-icon>
+        Share
+      </button>
+  </ion-item-options>
+</ion-item-sliding>

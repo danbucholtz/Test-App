@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Caption View</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="post">
+  <ion-list>
+    <ion-card>
+
+        <ion-item class="post-title" text-wrap>
+            <h2 [innerHtml]="postData.post.title.rendered"></h2>
+            <p class="date">{{postData.post.date | amTimeAgo}}</p>
+        </ion-item>
+        
+    </ion-card>
+
+    <ion-card text-wrap>
+      <img [src]="postData.images.source_url" *ngIf="postData.images">
+         <!--<img [src]="postData.post.better_featured_image.source_url" *ngIf="postData.post.better_featured_image">-->
+    </ion-card>
+  </ion-list>
+</ion-content>
